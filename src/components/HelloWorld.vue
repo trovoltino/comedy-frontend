@@ -26,7 +26,7 @@ export default {
         const res = await axios.get(liveUrl);
         this.tweets = res['data'];
       } catch {
-        console.log(err);
+        this.err = err;
       }
     }
   },
@@ -34,7 +34,8 @@ export default {
     return{
       show: false,
       current:0,
-      tweets: []
+      tweets: [],
+      err: ''
     }
   }
 }
